@@ -1,4 +1,4 @@
-LibSDL4J
+j2sdl (Java-to-SDL)
 ========
 
 LibSDL4J is a mapping of SDL2 APIs to Java. There are two goals for LibSDL4J:
@@ -45,23 +45,23 @@ If you have LibSDL4J set up as a dependency of your project,
 you can try to a sample program:
 
 ~~~
-import io.github.libsdl4j.api.event.SDL_Event;
-import io.github.libsdl4j.api.render.SDL_Renderer;
-import io.github.libsdl4j.api.video.SDL_Window;
+import com.github.carlwilk32.api.event.SDL_Event;
+import com.github.carlwilk32.api.render.SDL_Renderer;
+import com.github.carlwilk32.api.video.SDL_Window;
 
-import static io.github.libsdl4j.api.Sdl.SDL_Init;
-import static io.github.libsdl4j.api.Sdl.SDL_Quit;
-import static io.github.libsdl4j.api.SdlSubSystemConst.SDL_INIT_EVERYTHING;
-import static io.github.libsdl4j.api.error.SdlError.SDL_GetError;
-import static io.github.libsdl4j.api.event.SDL_EventType.*;
-import static io.github.libsdl4j.api.event.SdlEvents.SDL_PollEvent;
-import static io.github.libsdl4j.api.keycode.SDL_Keycode.SDLK_SPACE;
-import static io.github.libsdl4j.api.render.SDL_RendererFlags.SDL_RENDERER_ACCELERATED;
-import static io.github.libsdl4j.api.render.SdlRender.*;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
-import static io.github.libsdl4j.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
-import static io.github.libsdl4j.api.video.SdlVideo.SDL_CreateWindow;
-import static io.github.libsdl4j.api.video.SdlVideoConst.SDL_WINDOWPOS_CENTERED;
+import static com.github.carlwilk32.api.Sdl.SDL_Init;
+import static com.github.carlwilk32.api.Sdl.SDL_Quit;
+import static com.github.carlwilk32.api.SdlSubSystemConst.SDL_INIT_EVERYTHING;
+import static com.github.carlwilk32.api.error.SdlError.SDL_GetError;
+import static com.github.carlwilk32.api.event.SDL_EventType.*;
+import static com.github.carlwilk32.api.event.SdlEvents.SDL_PollEvent;
+import static com.github.carlwilk32.api.keycode.SDL_Keycode.SDLK_SPACE;
+import static com.github.carlwilk32.api.render.SDL_RendererFlags.SDL_RENDERER_ACCELERATED;
+import static com.github.carlwilk32.api.render.SdlRender.*;
+import static com.github.carlwilk32.api.video.SDL_WindowFlags.SDL_WINDOW_RESIZABLE;
+import static com.github.carlwilk32.api.video.SDL_WindowFlags.SDL_WINDOW_SHOWN;
+import static com.github.carlwilk32.api.video.SdlVideo.SDL_CreateWindow;
+import static com.github.carlwilk32.api.video.SdlVideoConst.SDL_WINDOWPOS_CENTERED;
 
 public class Demo {
 
