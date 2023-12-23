@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+//    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+//    mavenLocal()
+//    maven {
+//        url = uri('https://repo.maven.apache.org/maven2/')
+//    }
+}
+
+dependencies {
+    api 'net.java.dev.jna:jna:5.13.0'
+    api 'org.jetbrains:annotations:23.0.0'
+    api 'org.slf4j:slf4j-api:1.7.36'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation 'net.java.dev.jna:jna-platform:5.11.0'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.11'
+}
+
+group = 'com.github.carlwilk32'
+version = '1.0-SNAPSHOT'
+//description = 'j2sdl'
+//java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            from(components.java)
+//        }
+//    }
+//}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
