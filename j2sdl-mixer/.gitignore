@@ -1,0 +1,8 @@
+/target/
+/.idea/
+*.iml
+/natives/
+/include/
+/.gradle/
+/.mvn/
+/build/

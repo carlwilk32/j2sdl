@@ -1,1 +1,5 @@
 rootProject.name = 'j2sdl'
+include 'j2sdl-bom'
+include 'j2sdl-core'
+include 'j2sdl-mixer'
+include 'j2sdl-image'
