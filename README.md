@@ -18,26 +18,40 @@ dependencies {
 }
 ``` 
 
-Provide definition for GitHub Package Repository within your build script.
-NOTE: GitHub Package
-Repository [doesn't allow anonymous read](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages)
-for public packages. Moreover, GitHub doesn't allow any personal token (string with prefix `ghp_`) to be included in
-public repo and will automatically delete corresponding token. As a workaround you can use string interpolation
-until [official solution](https://github.com/orgs/community/discussions/26634) will be available.
+Provide definition for GitHub Package Repository (GPR) within your build script: 
 
 ```groovy
-def notSoSecret = 'TF5SxPsRe9qbAueowQKasXChyV7Wry4b0nER'
+repositories {
+    ...
+    maven { url 'https://ktor-github-package-registry-proxy.fly.dev' }
+}
+```
+
+this is a custom proxy that simply redirects all the requests to GPR with Authorization header provided by default.
+
+Q: "Why use proxy? Can't I access GPR directly?"
+<details>
+  <summary>A: yes, you can, but...</summary>
+
+GitHub [doesn't allow anonymous read](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages)
+for public packages; therefore You have to issue your own Personal Access Token (PAT) and provide their repo as follows
+
+```groovy
 repositories {
     mavenCentral()
     maven {
-        url = uri("https://maven.pkg.github.com/carlwilk32/*")
+        url = uri('https://maven.pkg.github.com/carlwilk32/*')
         credentials {
-            username = 'carlwilk32'
-            password = "ghp_${notSoSecret}"
+            username = 'YOUR_NAME'
+            password = 'YOUR_TOKEN'
         }
     }
 }
 ```
+
+This is quite annoying and barely usable approach, but there are no [official solution](https://github.com/orgs/community/discussions/26634) yet.
+
+</details>
 
 ### Maven
 
