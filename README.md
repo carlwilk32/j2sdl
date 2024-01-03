@@ -27,7 +27,7 @@ repositories {
 }
 ```
 
-this is a custom proxy that simply redirects all the requests to GPR with Authorization header provided by default.
+this is a [custom proxy](https://github.com/carlwilk32/ktor-github-package-registry-proxy) that simply redirects all the requests to GPR with Authorization header provided by default.
 
 Q: "Why use proxy? Can't I access GPR directly?"
 <details>
